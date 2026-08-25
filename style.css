@@ -1,0 +1,51 @@
+:root {
+	--text-colour: white;
+	--background-colour: black;
+
+	--heading-font: "Anta", sans-serif;
+	--body-font: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Global */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--body-font);
+  	color: var(--text-colour);
+	line-height: 1.5;
+	width: min(90%, 900px);
+	
+	background-image: 
+		linear-gradient(
+			to right,
+			rgba(0, 5, 40, 0.75), 
+			rgba(0, 5, 40, 0.3)
+		), 
+		url("https://cdn.mos.cms.futurecdn.net/q4ajDUnffbMhw6P8v87Aug.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 25% 50%;
+	background-color: var(--background-colour);
+
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
+main {
+	margin-left: 100px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+  	font-family: var(--heading-font);
+}
+
+a {
+	color: inherit
+}
+
+.nav-link {
+	text-decoration: none;
+}

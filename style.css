@@ -4,16 +4,18 @@
 
 	--heading-font: "Anta", sans-serif;
 	--body-font: Verdana, Geneva, Tahoma, sans-serif;
+
+	--accent-colour: orange;
 }
 
 /* Global */
-
 * {
 	box-sizing: border-box;
 }
 
 html, body {
-	margin: 0px
+	margin: 0px;
+	padding: 0px;
 }
 
 body {
@@ -35,12 +37,16 @@ body {
 
 	min-height: 100vh;
 	min-height: 100dvh;
+
+	display: flex;
+	flex-direction: column;
 }
 
 main {
 	margin-left: 100px;
 	margin-top: 25px;
 	width: min(90%, 900px);
+	flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -51,17 +57,23 @@ a {
 	color: inherit
 }
 
-/* Navbar */
-
+/* Nav - applies to both navbar and footer */
 .nav-link {
 	text-decoration: none;
 }
 
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Navbar */
 .navbar {
 	width: 100%;
 }
 
-nav ul {
+.navbar ul {
 	list-style-type: none;
 
 	margin: 0px;
@@ -72,17 +84,57 @@ nav ul {
 	display: flex;
 }
 
-nav ul li a {
+.navbar a {
 	display: block;
 	padding: 14px 16px;
 	text-decoration: none;
 }
 
-nav ul li a:hover {
+.navbar a:hover {
   	background-color: #333333;
 }
 
-nav ul li a[aria-current = "page"] {
-    color: #F4A261;
-    border-bottom: 2px solid #F4A261;
+.navbar a[aria-current = "page"] {
+    color: var(--accent-colour);
+    border-bottom: 2px solid var(--accent-colour);
+}
+
+/* Footer */
+footer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 2rem;
+	background-color: var(--background-colour);
+}
+
+.footer-section {
+	text-align: center;
+}
+
+.icon {
+    fill: white;
+	width: 32px;
+	height: 32px;
+}
+
+.icons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.footer-nav a {
+	font-family: var(--heading-font);
+}
+
+.footer-nav a:hover{
+  	color: var(--accent-colour);
+}
+
+.icon:hover {
+	fill: var(--accent-colour);
+}
+
+.navbar .nav-link, .icon {
+	display: block;
 }

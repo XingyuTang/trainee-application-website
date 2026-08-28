@@ -1,11 +1,12 @@
 :root {
-	--text-colour: white;
+	--default-colour: white;
 	--background-colour: black;
+	--content-background-colour: #0D1B3D;
+	--accent-colour: orange;
+	--navbar-hover-colour: #333333;
 
 	--heading-font: "Anta", sans-serif;
 	--body-font: Verdana, Geneva, Tahoma, sans-serif;
-
-	--accent-colour: orange;
 }
 
 /* Global */
@@ -20,41 +21,77 @@ html, body {
 
 body {
 	font-family: var(--body-font);
-  	color: var(--text-colour);
+  	color: var(--default-colour);
 	line-height: 1.5;
-	
-	background-image: 
-		linear-gradient(
-			to right,
-			rgba(0, 5, 40, 0.75), 
-			rgba(0, 5, 40, 0.3)
-		), 
-		url("https://cdn.mos.cms.futurecdn.net/q4ajDUnffbMhw6P8v87Aug.jpg");
-	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position-y: 20%;
+
 	background-color: var(--background-colour);
-
-	min-height: 100vh;
-	min-height: 100dvh;
-
-	display: flex;
-	flex-direction: column;
 }
 
 main {
-	margin-left: 100px;
-	margin-top: 25px;
-	width: min(90%, 900px);
 	flex: 1;
+}
+
+.hero {
+	background-image: 
+		linear-gradient(
+			rgba(0, 5, 40, 0.75), 
+			rgba(0, 5, 40, 0)
+		), 
+		url("https://cdn.mos.cms.futurecdn.net/q4ajDUnffbMhw6P8v87Aug.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	min-height: 75vh;
+	min-height: 75dvh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
+.content {
+	padding: 5rem;
+	background-color: var(--content-background-colour);
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
   	font-family: var(--heading-font);
 }
 
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+/* Content */
+.content h2 {
+	margin: 0;
+	padding: 0;
+}
+
 a {
 	color: inherit
+}
+
+.content-section {
+	padding-bottom: 3rem;
+}
+
+img {
+	display: block;
+
+	width: 50%;
+	max-width: 100%;
+	height: auto;
+
+	margin: auto;
+	margin-top: 5rem;
 }
 
 /* Nav - applies to both navbar and footer */
@@ -76,8 +113,8 @@ nav ul {
 .navbar ul {
 	list-style-type: none;
 
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 
 	background-color: var(--background-colour);
 
@@ -86,12 +123,12 @@ nav ul {
 
 .navbar a {
 	display: block;
-	padding: 14px 16px;
+	padding: 0.9rem 1rem;
 	text-decoration: none;
 }
 
 .navbar a:hover {
-  	background-color: #333333;
+  	background-color: var(--navbar-hover-colour);
 }
 
 .navbar a[aria-current = "page"] {

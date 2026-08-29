@@ -1,7 +1,8 @@
 :root {
 	--default-colour: white;
-	--background-colour: black;
-	--content-background-colour: #0D1B3D;
+	--nav-colour: black;
+	--dark-background-colour: #0D1B3D;
+	--light-background-colour: #092049;
 	--accent-colour: orange;
 	--navbar-hover-colour: #333333;
 
@@ -24,7 +25,7 @@ body {
   	color: var(--default-colour);
 	line-height: 1.5;
 
-	background-color: var(--background-colour);
+	background-color: var(--nav-colour);
 }
 
 main {
@@ -52,9 +53,9 @@ main {
 	text-align: center;
 }
 
-.content {
+.content, .section, .section-reverse {
 	padding: 5rem;
-	background-color: var(--content-background-colour);
+	background-color: var(--dark-background-colour);
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -79,8 +80,54 @@ a {
 	color: inherit
 }
 
-.content-section {
-	padding-bottom: 3rem;
+.content-section, .content-subsection {
+	padding-bottom: 0rem;
+	width: 80%;
+	margin-inline: auto;
+}
+
+.section {
+	background-color: var(--dark-background-colour);
+}
+
+.section-reverse {
+	background-color: var(--light-background-colour);
+}
+
+.content-subsection {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	margin-inline: auto;
+	align-items: center;
+}
+
+.content-subsection img {
+	object-fit: cover;
+	aspect-ratio: 4/3;
+	width: 80%;
+	margin: 0;
+}
+
+.section img {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.section .content-text {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.section-reverse img {
+	grid-column: 2;
+	grid-row: 1;
+	margin-left: auto;
+}
+
+.section-reverse .content-text {
+	grid-column: 1;
+	grid-row: 1;
 }
 
 img {
@@ -116,7 +163,7 @@ nav ul {
 	margin: 0;
 	padding: 0;
 
-	background-color: var(--background-colour);
+	background-color: var(--nav-colour);
 
 	display: flex;
 }
@@ -141,7 +188,7 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	padding: 2rem;
-	background-color: var(--background-colour);
+	background-color: var(--nav-colour);
 }
 
 .footer-section {

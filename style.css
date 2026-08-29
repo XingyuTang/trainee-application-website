@@ -1,3 +1,4 @@
+/* Variables */
 :root {
 	--default-colour: white;
 	--nav-colour: black;
@@ -53,13 +54,8 @@ main {
 	text-align: center;
 }
 
-.content, .section, .section-reverse {
-	padding: 5rem;
-	background-color: var(--dark-background-colour);
-}
-
 h1, h2, h3, h4, h5, h6, .navbar {
-  	font-family: var(--heading-font);
+	font-family: var(--heading-font);
 }
 
 h1 {
@@ -71,6 +67,11 @@ h2 {
 }
 
 /* Content */
+.content, .section, .section-reverse {
+	padding: 5rem;
+	background-color: var(--dark-background-colour);
+}
+
 .content h2 {
 	margin: 0;
 	padding: 0;
@@ -142,6 +143,10 @@ img {
 }
 
 /* Nav - applies to both navbar and footer */
+.navbar .nav-link, .icon {
+	display: block;
+}
+
 .nav-link {
 	text-decoration: none;
 }
@@ -175,12 +180,12 @@ nav ul {
 }
 
 .navbar a:hover {
-  	background-color: var(--navbar-hover-colour);
+	background-color: var(--navbar-hover-colour);
 }
 
 .navbar a[aria-current = "page"] {
-    color: var(--accent-colour);
-    border-bottom: 2px solid var(--accent-colour);
+	color: var(--accent-colour);
+	border-bottom: 2px solid var(--accent-colour);
 }
 
 /* Footer */
@@ -196,7 +201,7 @@ footer {
 }
 
 .icon {
-    fill: white;
+	fill: white;
 	width: 32px;
 	height: 32px;
 }
@@ -212,13 +217,9 @@ footer {
 }
 
 .footer-nav a:hover{
-  	color: var(--accent-colour);
+	color: var(--accent-colour);
 }
 
 .icon:hover {
 	fill: var(--accent-colour);
-}
-
-.navbar .nav-link, .icon {
-	display: block;
 }
